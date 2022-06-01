@@ -1,5 +1,18 @@
 import java.util.Arrays;
 
+/**
+ * 
+ * A processor HAS_A CORE, GPU, NetworkChip, and an INPUT DEVICE to interact
+ * 
+ * A Phone HAS_A Processor
+ * 
+ * Smartphone IS_A Phone
+ * 
+ * Smartphone or a Phone USES A NetworkChip to place a call
+ * 
+ * A call PRODUCES_A NetworkLine and connects !!
+ */
+
 public class AssembleAPhone {
 	
 	public static void main(String[] args) {
