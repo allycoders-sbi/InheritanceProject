@@ -115,12 +115,20 @@ class Address{
 	
 }
 
-class Person{
+interface Living
+{
+	void live();
+}
+
+class Person implements Living{
 	private String name,gender;
 	private int age;
 	private Address homeAddress;
 	private Address corrAddress;
 	
+	public void live() {
+		System.out.println("Living....");
+	}
 	
 	
 	public Person(String name, String gender, int age) {
@@ -197,11 +205,34 @@ class Person{
 	}
 }
 
-class Student extends Person
+interface Studying{
+	void study();
+}
+
+interface Chatting{
+	void chat();
+}
+
+interface Solving{
+	void solve();
+}
+
+class Student extends Person implements Studying,Chatting,Solving
 {
 	private String collegeName,stream;
 	private int rollno;
 	
+	public void study() {
+		System.out.println("Studying....");
+	}
+	
+	public void chat() {
+		System.out.println("Chatting....");
+	}
+	
+	public void solve() {
+		System.out.println("Solving.....");
+	}
 	
 	public Student(String name, String gender, int age, String collegeName, String stream, int rollno) {
 		super(name, gender, age);
@@ -220,10 +251,36 @@ class Student extends Person
 	
 }
 
-class Employee extends Student
+interface Working{
+	void work();
+}
+
+interface SigningIn{
+	void signIn();
+}
+
+interface SigningOut{
+	void signOut();
+}
+
+class Employee extends Student implements Working,SigningIn,SigningOut
 {
 	private String companyName, designation;
 	private int empNo,salary;
+	
+	
+	public void work() {
+		System.out.println("Working.....");
+	}
+	
+	
+	public void signIn() {
+		System.out.println("Signing In.....");
+	}
+	
+	public void signOut() {
+		System.out.println("Signing Out....");
+	}
 	
 	
 	public Employee(String name, String gender, int age, String collegeName, String stream, int rollno,

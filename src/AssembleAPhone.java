@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 /**
  * 
- * A processor HAS_A CORE, GPU, NetworkChip, and an INPUT DEVICE to interact
+ * A processor HAS_A CORE, GPU, NetworkChip, 
  * 
- * A Phone HAS_A Processor
+ * A Phone HAS_A Processor and also HAS_AN INPUT DEVICE to interact
  * 
  * Smartphone IS_A Phone
  * 
@@ -29,7 +29,7 @@ public class AssembleAPhone {
 	// Try to call
 	NetworkLine callTo100 = new NetworkLine(100, "Police", ApplePhone.getMainProcessor().getNet().NetworkType, true);
 	//ApplePhone.Dial(callTo100);
-	ApplePhone.showSpecification();
+	ApplePhone.aboutPhone();
 	}
 	
 	
@@ -149,7 +149,7 @@ class Phone
 				+ input + "]";
 	}
 	
-	public void showSpecification() {
+	public void Specification() {
 		System.out.println(this.toString());
 	}
 	
@@ -188,6 +188,9 @@ class Smartphone extends Phone
 				+ ", input=" + input + ", toString()=" + super.toString() + "]";
 	}
 	
+	public void aboutPhone() {
+		super.Specification();
+	}
 	
 	
 }
